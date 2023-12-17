@@ -53,26 +53,44 @@
   <body>
     <div class="sp-container">
       <div class="sp-content">
-        <div class="sp-globe"></div>
-        <h2 class="frame-1"> </h2>
-        <h2 class="frame-2"></h2>
-        <h2 class="frame-3"></h2>
-        <h2 class="frame-4">/h2>
+        <div class="sp-globe">
+        
+        </div>
+        <h2 class="frame-1">I</h2>
+        <h2 class="frame-2">LOVE</h2>
+        <h2 class="frame-3">YOU</h2>
+        <h2 class="frame-4">♥</h2>
         <h2 class="frame-5">
-          <span></span>
-          <span></span>
-          <span> </span>
+          <span>Hoàng </span>
+          <span>Nhật </span>
+          <span> Linh</span>
         </h2>
       </div>
     </div>
 
     <canvas id="pinkboard">
-      <canvas id="pinkboard"> </canvas>
+      <canvas id="pinkboard">
+        
+      </canvas>
+
     </canvas>
+    <img id="particleImage" src="./img/aaa.jpg" style="display: none;">
     <script>
       /*
        * Settings
        */
+       var particleImage = new Image();
+        particleImage.onload = function () {
+            // Initialize the particle pool with the loaded image
+            particles = new ParticlePool(settings.particles.length, particleImage);
+
+            // Delay rendering bootstrap
+            setTimeout(function () {
+                onResize();
+                render();
+            }, 10);
+        };
+        particleImage.src = document.getElementById('particleImage').src;
       var settings = {
         particles: {
           length: 2200, // maximum amount of particles
